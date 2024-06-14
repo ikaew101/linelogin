@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  energy_frontend:
+    build: ./
+    image: energy_frontend:v1
+    container_name: energy_frontend_c
+    ports:
+      - '8880:80'
+    volumes:
+      - ./:/energy/frontend
+      - ./energy/frontend/node_modules
+    stdin_open: true
+    tty: true
